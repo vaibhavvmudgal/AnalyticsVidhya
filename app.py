@@ -52,7 +52,7 @@ def process_file(file):
 @st.cache_resource
 def create_vectorstore(data):
     """Create a Pinecone vectorstore from the course data."""
-    model = SentenceTransformer('all-MiniLM-L6-v2')
+    model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
     metadata = []
     texts = []
 
