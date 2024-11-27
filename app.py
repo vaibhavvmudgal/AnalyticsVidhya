@@ -6,8 +6,14 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Pinecone as LangchainPinecone
 import pandas as pd
 
+# Set Pinecone API key as an environment variable (optional but recommended)
+os.environ["PINECONE_API_KEY"] = "pcsk_73PRpV_CgWMY7AHHNkEg9fbvMuLVS2G85A22t8K4QPBw3UBd1ZvmMe472YJzKBB9XQCPX5"
+
+# Ensure the API key is being read correctly
+st.write("Pinecone API Key from environment:", os.getenv("PINECONE_API_KEY"))
+
 # Pinecone setup
-PINECONE_API_KEY = "pcsk_73PRpV_CgWMY7AHHNkEg9fbvMuLVS2G85A22t8K4QPBw3UBd1ZvmMe472YJzKBB9XQCPX5"
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")  # Use environment variable
 INDEX_NAME = "drishti"
 
 # Initialize Pinecone client
